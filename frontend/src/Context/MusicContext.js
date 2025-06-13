@@ -244,7 +244,7 @@ export const MusicProvider = ({ children }) => {
         if (imagePath.startsWith('http')) return imagePath;
 
         // Construct backend image URL
-        return `http://localhost:3003/artist/${imagePath}`;
+        return `https://molody-mern-6imo.onrender.com/artist/${imagePath}`;
     };
 
     // Function to play a song
@@ -253,7 +253,7 @@ export const MusicProvider = ({ children }) => {
         const formattedSong = {
             ...song,
             coverUrl: getArtistImageUrl(song.coverUrl || song.image),
-            songUrl: song.songUrl.startsWith('http') ? song.songUrl : `http://localhost:3003/api/${song.songUrl}`
+            songUrl: song.songUrl.startsWith('http') ? song.songUrl : `https://molody-mern-6imo.onrender.com/api/${song.songUrl}`
         };
 
         if (currentSong?.songUrl === formattedSong.songUrl) {
@@ -270,7 +270,7 @@ export const MusicProvider = ({ children }) => {
                 const formattedPlaylist = newPlaylist.map(s => ({
                     ...s,
                     coverUrl: getArtistImageUrl(s.coverUrl || s.image),
-                    songUrl: s.songUrl.startsWith('http') ? s.songUrl : `http://localhost:3003/api/${s.songUrl}`
+                    songUrl: s.songUrl.startsWith('http') ? s.songUrl : `https://molody-mern-6imo.onrender.com/api/${s.songUrl}`
                 }));
 
                 setPlaylist(formattedPlaylist);
@@ -299,7 +299,7 @@ export const MusicProvider = ({ children }) => {
         const formattedPlaylist = newPlaylist.map(song => ({
             ...song,
             coverUrl: getArtistImageUrl(song.coverUrl || song.image),
-            songUrl: song.songUrl.startsWith('http') ? song.songUrl : `http://localhost:3003/api/${song.songUrl}`
+            songUrl: song.songUrl.startsWith('http') ? song.songUrl : `https://molody-mern-6imo.onrender.com/api/${song.songUrl}`
         }));
 
         setPlaylist(formattedPlaylist);
@@ -491,7 +491,7 @@ export const MusicProvider = ({ children }) => {
         const formattedSong = {
             ...song,
             coverUrl: getArtistImageUrl(song.coverUrl || song.image),
-            songUrl: song.songUrl.startsWith('http') ? song.songUrl : `http://localhost:3003/api/${song.songUrl}`
+            songUrl: song.songUrl.startsWith('http') ? song.songUrl : `https://molody-mern-6imo.onrender.com/api/${song.songUrl}`
         };
 
         const songExists = playlist.some(item => item.songUrl === formattedSong.songUrl);

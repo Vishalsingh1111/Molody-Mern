@@ -36,7 +36,7 @@ function ArtistSongs() {
     useEffect(() => {
         const fetchSongs = async () => {
             try {
-                const res = await fetch("http://localhost:3003/api");
+                const res = await fetch("https://molody-mern-6imo.onrender.com/api");
                 if (!res.ok) throw new Error("Failed to fetch songs");
 
                 const data = await res.json();
@@ -50,7 +50,7 @@ function ArtistSongs() {
                         .includes(artistName?.toLowerCase())
                 ).map(song => ({
                     ...song,
-                    songUrl: song.songUrl.startsWith('http') ? song.songUrl : `http://localhost:3003/api/${song.songUrl}`,
+                    songUrl: song.songUrl.startsWith('http') ? song.songUrl : `https://molody-mern-6imo.onrender.com/api/${song.songUrl}`,
                     coverUrl: getArtistImageUrl(song.coverUrl || song.image),
                     plays: Math.floor(Math.random() * 100000000) + 1000000, // Random play count for demo
                     duration: formatDuration(Math.floor(Math.random() * 180) + 120) // Random duration for demo

@@ -35,13 +35,13 @@ function MusicPlayer() {
     useEffect(() => {
         const fetchAllSongs = async () => {
             try {
-                const res = await fetch("http://localhost:3003/api");
+                const res = await fetch("https://molody-mern-6imo.onrender.com/api");
                 if (!res.ok) throw new Error("Failed to fetch songs");
 
                 const data = await res.json();
                 const formattedSongs = data.map(song => ({
                     ...song,
-                    songUrl: song.songUrl.startsWith('http') ? song.songUrl : `http://localhost:3003/api/${song.songUrl}`,
+                    songUrl: song.songUrl.startsWith('http') ? song.songUrl : `https://molody-mern-6imo.onrender.com/api/${song.songUrl}`,
                     coverUrl: song.coverUrl || song.image || "https://i.scdn.co/image/ab67616d0000b27388e550a5645aa55c5be19b07"
                 }));
 

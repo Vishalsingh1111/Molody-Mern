@@ -11,7 +11,7 @@ function PopularArtists() {
     useEffect(() => {
         const fetchArtists = async () => {
             try {
-                const res = await fetch("http://localhost:3003/artist");
+                const res = await fetch("https://molody-mern-6imo.onrender.com/artist");
                 if (!res.ok) throw new Error("Failed to fetch artists");
                 const data = await res.json();
                 setArtists(data);

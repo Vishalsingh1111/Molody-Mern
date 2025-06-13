@@ -30,7 +30,7 @@ function NewArtist() {
         data.append('image', image);
 
         try {
-            const res = await axios.post('http://localhost:3003/artist', data, {
+            const res = await axios.post('https://molody-mern-6imo.onrender.com/artist', data, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             console.log('Uploaded:', res.data);

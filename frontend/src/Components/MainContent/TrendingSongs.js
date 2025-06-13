@@ -11,7 +11,7 @@ function TrendingSongs() {
     useEffect(() => {
         async function fetchSongs() {
             try {
-                const res = await fetch("http://localhost:3003/api"); // Fetch all songs
+                const res = await fetch("https://molody-mern-6imo.onrender.com/api"); // Fetch all songs
                 if (!res.ok) {
                     throw new Error(`Failed to fetch songs, status: ${res.status}`);
                 }

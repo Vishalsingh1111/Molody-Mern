@@ -20,7 +20,7 @@ function UploadSong() {
         // Fetch serialNo count from backend
         const fetchSerialNo = async () => {
             try {
-                const response = await fetch('http://localhost:3003/api/count');
+                const response = await fetch('https://molody-mern-6imo.onrender.com/api/count');
                 const data = await response.json();
                 setFormData(prev => ({ ...prev, serialNo: data.count + 1 }));
             } catch (err) {
@@ -70,7 +70,7 @@ function UploadSong() {
         data.append('song', song);
 
         try {
-            const res = await axios.post('http://localhost:3003/api', data, {
+            const res = await axios.post('https://molody-mern-6imo.onrender.com/api', data, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             console.log('Uploaded:', res.data);
